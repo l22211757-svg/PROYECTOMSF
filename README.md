@@ -23,25 +23,16 @@ El modelizado de sistemas fisiológicos es una herramienta importante en Ingenie
 La asignatura de Modelado de Sistemas Fisiológicos forma parte del plan de estudios de la carrera en Ingeniería Biomédica con la siguiente competencia general del curso: Utiliza las propiedades de los circuitos RLC para describir la dinámica de sistemas fisiológicos, obtener modelos matemáticos y aplicar el control clásico, esto con el objetivo de integrar los principios de la Ingeniería de Control, la Electrónica Analógica y las Ciencias de la Computación con la Anatomía y Fisiología del cuerpo humano para proporcionar descripciones cuantitativas y cualitativas de sistemas fisiológicos complejos con el objetivo de modelizar, analizar, controlar, ilustrar y predecir su dinámica tanto en el corto como en el largo plazo.
 
 ## Objetivos
-1.Desarrollar el Modelo Matemático: Obtener y documentar las Ecuaciones Integro-Diferenciales del circuito RLC que modela el sistema lagrimal.
-
-2.Determinar la Función de Transferencia: Calcular la Función de Transferencia del sistema en lazo abierto, relacionando la producción lagrimal con el volumen acumulado en el saco.
-
-3.Analizar la Estabilidad del Sistema: Determinar la estabilidad del modelo RLC y calcular las raíces (polos) del polinomio característico para los casos Sano, Obstrucción Parcial y Obstrucción Severa.
-
-4.Evaluar la Respuesta Dinámica: Clasificar el tipo de respuesta (amortiguamiento) para los tres casos fisiológicos y calcular el error en estado estacionario en lazo abierto.
-
-5.Simular el Sistema en Lazo Abierto: Implementar la emulación del sistema lagrimal en SIMULINK/SIMSCAPE para obtener las curvas de respuesta transitoria y estado estacionario para cada caso.
-
-6.Diseñar el Controlador PID: Sintonizar las ganancias de un controlador PID para el caso de Obstrucción Severa, basándose en la estabilidad y las características del sistema de segundo orden.
-
-7.Evaluar el Desempeño del Control: Demostrar cómo el sistema en lazo cerrado (con el controlador PID) elimina el error en estado estacionario y mejora significativamente la respuesta transitoria en los casos patológicos.
-
-8.Ilustrar Resultados Computacionales: Generar y presentar las curvas de respuesta en un cuaderno computacional de MATLAB que compare la respuesta en lazo abierto vs. lazo cerrado.
-
-9.Crear el Diagrama Fisiológico: Diseñar un modelo fisiológico visual en BioRender que establezca una correspondencia clara entre los componentes RLC y las estructuras anatómicas del sistema lagrimal.
-
-Documentar y Presentar el Proyecto: Elaborar un ensayo gráfico que presente de manera concisa y coherente el modelo, el análisis matemático, la sintonización del PID y los resultados de la simulación.
+1. Desarrollar el Modelo Matemático: Obtener y documentar las Ecuaciones Integro-Diferenciales del circuito RLC que modela el sistema lagrimal.
+2. Determinar la Función de Transferencia: Calcular la Función de Transferencia del sistema en lazo abierto, relacionando la producción lagrimal con el volumen acumulado en el saco.
+3. Analizar la Estabilidad del Sistema: Determinar la estabilidad del modelo RLC y calcular las raíces (polos) del polinomio característico para los casos Sano, Obstrucción Parcial y Obstrucción Severa.
+4. Evaluar la Respuesta Dinámica: Clasificar el tipo de respuesta (amortiguamiento) para los tres casos fisiológicos y calcular el error en estado estacionario en lazo abierto.
+5. Simular el Sistema en Lazo Abierto: Implementar la emulación del sistema lagrimal en SIMULINK/SIMSCAPE para obtener las curvas de respuesta transitoria y estado estacionario para cada caso.
+6. Diseñar el Controlador PID: Sintonizar las ganancias de un controlador PID para el caso de Obstrucción Severa, basándose en la estabilidad y las características del sistema de segundo orden.
+7. Evaluar el Desempeño del Control: Demostrar cómo el sistema en lazo cerrado (con el controlador PID) elimina el error en estado estacionario y mejora significativamente la respuesta transitoria en los casos patológicos.
+8. Ilustrar Resultados Computacionales: Generar y presentar las curvas de respuesta en un cuaderno computacional de MATLAB que compare la respuesta en lazo abierto vs. lazo cerrado.
+9. Crear el Diagrama Fisiológico: Diseñar un modelo fisiológico visual en BioRender que establezca una correspondencia clara entre los componentes RLC y las estructuras anatómicas del sistema lagrimal.
+10. Documentar y Presentar el Proyecto: Elaborar un ensayo gráfico que presente de manera concisa y coherente el modelo, el análisis matemático, la sintonización del PID y los resultados de la simulación. 
 
 ## Descripción detallada del sistema
 
