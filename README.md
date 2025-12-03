@@ -1,10 +1,10 @@
 \[!\[Open in MATLAB Online]
 
-# Práctica: Sistema musculoesquelético
+# Proyecto: Sistema Lacrimal
 
-## Información de la estudiante
+## Información de los estudiantes
 
-Corina Plata-Ante \[03210981]; corina.plata@tectijuana.edu.mx
+Gonzalez Sanchez Paola [22211757]; l22211757@tectijuana.edu.mx
 
 Modelado de Sistemas Fisiológicos
 
@@ -23,27 +23,50 @@ El modelizado de sistemas fisiológicos es una herramienta importante en Ingenie
 La asignatura de Modelado de Sistemas Fisiológicos forma parte del plan de estudios de la carrera en Ingeniería Biomédica con la siguiente competencia general del curso: Utiliza las propiedades de los circuitos RLC para describir la dinámica de sistemas fisiológicos, obtener modelos matemáticos y aplicar el control clásico, esto con el objetivo de integrar los principios de la Ingeniería de Control, la Electrónica Analógica y las Ciencias de la Computación con la Anatomía y Fisiología del cuerpo humano para proporcionar descripciones cuantitativas y cualitativas de sistemas fisiológicos complejos con el objetivo de modelizar, analizar, controlar, ilustrar y predecir su dinámica tanto en el corto como en el largo plazo.
 
 ## Objetivos
+1.Desarrollar el Modelo Matemático: Obtener y documentar las Ecuaciones Integro-Diferenciales del circuito RLC que modela el sistema lagrimal.
 
-1. Convertir el diagrama mecánico al diagrama eléctrico.
-2. Calcular la función de transferencia aplicando el principio de superposición.
-3. Calcular el error en estado estacionario y la estabilidad en lazo abierto.
-4. Emular y simular la respuesta del circuito en Simulink/Simscape a la señal impulso unitario.
-5. Sintonizar las ganancias de un controlador PID para eliminar el error entre la entrada y la salida del sistema control-caso.
-6. Obtener la respuesta en lazo abierto y en lazo cerrado con el controlador PID en Spyder/Python con la función de transferencia.
+2.Determinar la Función de Transferencia: Calcular la Función de Transferencia del sistema en lazo abierto, relacionando la producción lagrimal con el volumen acumulado en el saco.
+
+3.Analizar la Estabilidad del Sistema: Determinar la estabilidad del modelo RLC y calcular las raíces (polos) del polinomio característico para los casos Sano, Obstrucción Parcial y Obstrucción Severa.
+
+4.Evaluar la Respuesta Dinámica: Clasificar el tipo de respuesta (amortiguamiento) para los tres casos fisiológicos y calcular el error en estado estacionario en lazo abierto.
+
+5.Simular el Sistema en Lazo Abierto: Implementar la emulación del sistema lagrimal en SIMULINK/SIMSCAPE para obtener las curvas de respuesta transitoria y estado estacionario para cada caso.
+
+6.Diseñar el Controlador PID: Sintonizar las ganancias de un controlador PID para el caso de Obstrucción Severa, basándose en la estabilidad y las características del sistema de segundo orden.
+
+7.Evaluar el Desempeño del Control: Demostrar cómo el sistema en lazo cerrado (con el controlador PID) elimina el error en estado estacionario y mejora significativamente la respuesta transitoria en los casos patológicos.
+
+8.Ilustrar Resultados Computacionales: Generar y presentar las curvas de respuesta en un cuaderno computacional de MATLAB que compare la respuesta en lazo abierto vs. lazo cerrado.
+
+9.Crear el Diagrama Fisiológico: Diseñar un modelo fisiológico visual en BioRender que establezca una correspondencia clara entre los componentes RLC y las estructuras anatómicas del sistema lagrimal.
+
+Documentar y Presentar el Proyecto: Elaborar un ensayo gráfico que presente de manera concisa y coherente el modelo, el análisis matemático, la sintonización del PID y los resultados de la simulación.
 
 ## Descripción detallada del sistema
 
-El término F0 representa la fuerza desarrollada por el elemento contráctil activo del músculo, mientras que F(t) es la fuerza real que resulta después de tener en cuenta las propiedades mecánicas del músculo, y se asume que F0 = αF(t), donde 0 < α< 1; R representa la amortiguación viscosa inherente al tejido, mientras que Cp (elemento elástico paralelo) y Cs (elemento elástico en serie) reflejan las propiedades de almacenamiento elástico del sarcolema y los tendones musculares, respectivamente.
+El sistema lacrimal consiste en la producción de lágrimas por la glándula lagrimal, su distribución sobre la superficie ocular y su eliminación mediante el aparato de drenaje (puncta, canalículos, saco lagrimal y conducto nasolagrimal).
 
-La configuración paralela se realiza para considerar las restricciones mecánicas impuestas a los componentes del modelo. Si el resorte Cp se estira en una longitud incremental x(t), toda la combinación en serie de R y Cs también se extenderá en la misma longitud. Además, la suma de la fuerza transmitida a través de las dos ramas de la configuración paralela debe ser igual a F(t). Aunque la suma de las extensiones de Cs y R tendrá que ser igual a x(t), las contribuciones individuales de longitud de Cs y R no necesitan ser iguales. Por lo tanto, si se asume que C\_{s} se estira una longitud x₁(t), entonces la extensión en la combinación paralela de R y F0 será x(t)-x₁(t). La velocidad con la que se extiende el amortiguador representado por R se obtiene al derivar x(t) - x1(t) con respecto al tiempo, es decir, d\[x(t) - x1(t)] /dt.
+El sistema lagrimal, compuesto por la producción de lágrimas y el aparato de drenaje, se traduce al dominio eléctrico mediante la siguiente analogía:
+Ve​(t) (Entrada),Producción Lagrimal,Tasa de entrada constante de líquido al sistema.
+C (Capacitor),Saco Lagrimal (Capacitancia),Modela la capacidad de almacenamiento y distensibilidad del saco.
+Rd​ (Resistencia de Drenaje),Conducto Nasolagrimal,Modela la resistencia principal al flujo de salida (Obstrucción).
+L (Inductor),Flujo del Líquido,Modela la inercia y viscosidad del flujo.
+Vout​(t) (Salida),Volumen/Presión en el Saco,Representa la acumulación de lágrimas (Epífora).
 
-Palabras clave: ???; ???; ???; ???; ???
+Se analizan tres condiciones fisiológicas, modificando los parámetros $R_d$, $C$, y $L$ para simular el grado de obstrucción:
+
+Caso,Rd​ (Resistencia al Drenaje),C (Capacitancia del Saco),Dinámica Resultante
+Sano (Control),10kΩ,2μF,"Respuesta rápida, drenaje eficiente, sin acumulación."
+Obstrucción Parcial,50kΩ,1μF,"Drenaje lento, mayor tiempo de estabilización, lagrimeo ocasional."
+Obstrucción Severa,100kΩ,0.5μF,"Drenaje casi nulo, acumulación crónica, tiempos de vaciado prolongados."
+
+Palabras clave: Modelado de Sistemas; Analogía Eléctrica; Dacriocistitis; Epífora; Sobreamortiguado; Función de Transferencia; Saco Lagrimal; Controlador PID; Error de Estado Estacionario; Resistencia de Drenaje; Lazo Cerrado; Sintonización PID; Polos del Sistema; Simulink; Respuesta Transitoria.
 
 ## Lista de archivos incluidos en el repositorio
 
 1. Cuaderno computacional de MATLAB \[.mlx].
 2. Modelo de Simulink \[.slx].
-3. Archivos de Spyder \[.py].
 4. Imagen con los parámetros del controlador.
 5. Imágenes de las simulaciones \[.pdf y .png].
 6. Evidencia del análisis matemático: función de transferencia, error en estado estacionario y estabilidad en lazo abierto.
