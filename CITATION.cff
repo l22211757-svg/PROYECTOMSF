@@ -1,0 +1,22 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Matlab
+message: Lenguaje M
+type: software
+authors:
+  - given-names: Paola
+    family-names: Gonzalez Sanchez
+    email: l22211757@tectijuana.edu.mx
+    affiliation: Tecnm-itt
+repository-code: 'https://github.com/l22211757-svg/Practica4MSF/tree/main'
+keywords:
+  - Eritropoyesis
+  - Glóbulos rojos
+  - ' Modelado matemático'
+  - Ecuaciones diferenciales
+  - "Transfusión\_sanguínea"
+license: BSD-2-Clause
+version: '1.0'
+date-released: '2025-11-05'
