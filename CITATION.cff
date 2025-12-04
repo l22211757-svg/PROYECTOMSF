@@ -10,13 +10,26 @@ authors:
     family-names: Gonzalez Sanchez
     email: l22211757@tectijuana.edu.mx
     affiliation: Tecnm-itt
-repository-code: 'https://github.com/l22211757-svg/Practica4MSF/tree/main'
+repository-code: 'https://github.com/l22211757-svg/PROYECTOMSF/tree/main'
 keywords:
-  - Eritropoyesis
-  - Glóbulos rojos
-  - ' Modelado matemático'
-  - Ecuaciones diferenciales
-  - "Transfusión\_sanguínea"
+  - Modelado de Sistemas
+  - Analogía Eléctrica
+  - Dacriocistitis
+  - Epífora
+  - Sobreamortiguado
+  - Función de Transferencia
+  - Saco Lagrimal
+  - Controlador PID
+  - Error de Estado Estacionario
+  - Resistencia de Drenaje
+  - Lazo Cerrado
+  - Sintonización PID
+  - Polos del Sistema
+  - Simulink
+  - Respuesta Transitoria.
+
+
+
 license: BSD-2-Clause
 version: '1.0'
-date-released: '2025-11-05'
+date-released: '2025-12-03'
