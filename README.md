@@ -5,6 +5,7 @@
 ## Información de los estudiantes
 
 Gonzalez Sanchez Paola [22211757]; l22211757@tectijuana.edu.mx
+Preciado Hernandez Andres [21210469]; L21210469@tectijuana.edu.mx
 
 Modelado de Sistemas Fisiológicos
 
